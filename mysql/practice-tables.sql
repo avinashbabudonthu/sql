@@ -70,3 +70,8 @@ commit;
 drop table dept;
 drop table emp;
 drop table salgrade;
+
+-- select
+select * from emp;
+select * from dept;
+select * from salgrade;
