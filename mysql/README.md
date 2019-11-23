@@ -1,6 +1,6 @@
 # Examples
 * [Create DB and User](create-db-and-user.sql)
-* [Practice Tables](practice-tables.sql)
+* [Practice Tables Create Queries](practice-tables.sql)
 * [Insert Queries](insert-queries.sql)
 * [Delete Queries](delete-queries.sql)
 * [Drop Queries](drop-queries.sql)
