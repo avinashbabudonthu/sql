@@ -14,9 +14,20 @@ import javax.persistence.Table;
 @Table(name = "DEPT")
 public class Department {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "DEPTNO")
     private Integer id;
+    
+    @Column(name = "DNAME")
     private String deptName;
+
+    @Column(name = "LOC")
     private String location;
+
+    // JoinColumn annotation, name == foreign key colunm, referencedColumnName == primary key Column
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DEPTNO", referencedColumnName = "DEPTNO")
     private Set<Employee> employees;
 
     public Department(Integer id, String deptName, String location, Set<Employee> employees) {
@@ -29,9 +40,6 @@ public class Department {
     public Department() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "DEPTNO")
     public Integer getId() {
 	return id;
     }
@@ -39,8 +47,7 @@ public class Department {
     public void setId(Integer id) {
 	this.id = id;
     }
-
-    @Column(name = "DNAME")
+   
     public String getDeptName() {
 	return deptName;
     }
@@ -49,7 +56,7 @@ public class Department {
 	this.deptName = deptName;
     }
 
-    @Column(name = "LOC")
+    
     public String getLocation() {
 	return location;
     }
@@ -58,8 +65,6 @@ public class Department {
 	this.location = location;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DEPTNO", referencedColumnName = "DEPTNO")
     public Set<Employee> getEmployees() {
 	return employees;
     }
@@ -91,14 +96,34 @@ import javax.persistence.Table;
 @Table(name = "EMP")
 public class Employee {
 
+    @Id
+    @Column(name = "EMPNO")
     private Integer id;
+
+    @Column(name = "ENAME")
     private String name;
+
+    @Column(name = "JOB")
     private String job;
+
+    @Column(name = "SAL")
     private Long salary;
+
+    @Column(name = "COMM")
     private Long comm;
+
+    @Column(name = "MGR")
     private Integer manager;
+
+    @Column(name = "HIREDATE")
     private Date hiredate;
+
+    @Column(name = "ACTIVE")
     private Boolean active;
+
+    // JoinColumn annotation, name == foreign key colunm, referencedColumnName == primary key Column
+    @ManyToOne
+    @JoinColumn(name = "DEPTNO", referencedColumnName = "DEPTNO")
     private Department department;
 
     public Employee() {
@@ -115,8 +140,6 @@ public class Employee {
 	this.hiredate = hiredate;
     }
 
-    @Id
-    @Column(name = "EMPNO")
     public Integer getId() {
 	return id;
     }
@@ -125,7 +148,6 @@ public class Employee {
 	this.id = id;
     }
 
-    @Column(name = "ENAME")
     public String getName() {
 	return name;
     }
@@ -134,7 +156,6 @@ public class Employee {
 	this.name = name;
     }
 
-    @Column(name = "JOB")
     public String getJob() {
 	return job;
     }
@@ -143,7 +164,6 @@ public class Employee {
 	this.job = job;
     }
 
-    @Column(name = "SAL")
     public Long getSalary() {
 	return salary;
     }
@@ -152,7 +172,6 @@ public class Employee {
 	this.salary = salary;
     }
 
-    @Column(name = "COMM")
     public Long getComm() {
 	return comm;
     }
@@ -161,7 +180,6 @@ public class Employee {
 	this.comm = comm;
     }
 
-    @Column(name = "MGR")
     public Integer getManager() {
 	return manager;
     }
@@ -170,7 +188,7 @@ public class Employee {
 	this.manager = manager;
     }
 
-    @Column(name = "HIREDATE")
+    
     public Date getHiredate() {
 	return hiredate;
     }
@@ -179,7 +197,6 @@ public class Employee {
 	this.hiredate = hiredate;
     }
 
-    @Column(name = "ACTIVE")
     public Boolean getActive() {
 	return active;
     }
@@ -188,8 +205,6 @@ public class Employee {
 	this.active = active;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "DEPTNO", referencedColumnName = "DEPTNO")
     public Department getDepartment() {
 	return department;
     }
@@ -217,9 +232,16 @@ import javax.persistence.Table;
 @Table(name = "SALGRADE")
 public class SalaryGrade {
 
-    private Long highSalary;
-    private Long lowSalary;
+    @Id
+    @Column(name = "GRADE")
     private Long grade;
+
+    @Column(name = "HISAL")
+    private Long highSalary;
+
+    @Column(name = "LOSAL")
+    private Long lowSalary;
+    
 
     public SalaryGrade(Long highSalary, Long lowSalary, Long grade) {
 	this.highSalary = highSalary;
@@ -230,8 +252,6 @@ public class SalaryGrade {
     public SalaryGrade() {
     }
 
-    @Id
-    @Column(name = "GRADE")
     public Long getGrade() {
 	return grade;
     }
@@ -240,7 +260,6 @@ public class SalaryGrade {
 	this.grade = grade;
     }
 
-    @Column(name = "HISAL")
     public Long getHighSalary() {
 	return highSalary;
     }
@@ -249,7 +268,6 @@ public class SalaryGrade {
 	this.highSalary = highSalary;
     }
 
-    @Column(name = "LOSAL")
     public Long getLowSalary() {
 	return lowSalary;
     }
