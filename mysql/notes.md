@@ -22,3 +22,20 @@
 * Click on "Continue" and confirm the changes
 * Wait for the "Modifying" operation to be completed
 * Again, open the "Instances" tab. Expand your MySQL instance and expand "Instance Action" tab and select "Reboot"
+
+## Triggers
+* Create Trigger
+```
+DELIMITER $$
+create trigger t_sale_after_insert after insert on t_sale
+for each row
+begin
+insert into t_audit(username, action, action_date_time, table_name, column_name, new_value, row_pk)
+values (NEW.username, 'insert', CURRENT_TIMESTAMP(), 't_sale', 'lead_owner', NEW.lead_owner, NEW.id);
+if(OLD.lead_owner <> NEW.lead_owner) then
+insert into t_audit(username, action, action_date_time, table_name, column_name, new_value, old_value, row_pk)
+values (NEW.username, 'update', CURRENT_TIMESTAMP(), 't_sale', 'lead_owner', NEW.lead_owner, OLD.lead_owner, NEW.id);
+end if;
+END$$
+DELIMITER ;
+```
