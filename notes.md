@@ -3,5 +3,5 @@
 ### Joins
 ![picture alt](images/joins.jpg "Joins")
 
-### SQL Commans
+### SQL Commands
 ![picture alt](images/sql-commands.jpg "Joins")
