@@ -66,7 +66,7 @@ ALTER TABLE table_name DROP COLUMN column_name;
 
 ALTER TABLE customers DROP COLUMN customer_name;
 ```
-* Create Table Scripts
+* Drop Table
 ```
 DROP TABLE JOB IF EXISTS;
 ```
