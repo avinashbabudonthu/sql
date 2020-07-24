@@ -1,5 +1,8 @@
-# List of SQL Practices
-* [MySQL](mysql)
-* [Practice Tables Java Entities](practice-tables-java-entities.txt)
-* [Oracle](oracle)
-* [PostgreSQL](postgre-sql)
+# SQL
+* [h2](h2)
+* [images](images)
+* [liquibase](liquibase)
+* [mysql](mysql)
+* [oracle](oracle)
+* [postgre-sql](postgre-sql)
+* [sql-server](sql-server)
