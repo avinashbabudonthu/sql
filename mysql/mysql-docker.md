@@ -20,7 +20,7 @@ docker container ls
 ```
 * Connect from Mysql workbench
 	* hostname - `localhost`
-	* post - `3308`
+	* port - `3308`
 	* username - `practice_admin`
 	* password - `practice_admin`
 	* url - `jdbc:mysql://mysql-docker:3306/practice`
