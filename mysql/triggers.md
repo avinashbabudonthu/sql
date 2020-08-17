@@ -1,5 +1,10 @@
 ## Create trigger
 
+## Drop trigger
+```
+drop trigger trigger_name;
+```
+
 ## Use triggers
 * Show triggers - General syntax
 ```
@@ -20,8 +25,4 @@ SHOW TRIGGERS FROM test WHERE 'Table' = 'user'
 * Show triggers by event
 ```
 SHOW triggers WHERE Event Like 'Insert'
-```
-* Drop trigger
-```
-drop trigger trigger_name;
 ```
