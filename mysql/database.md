@@ -1,32 +1,23 @@
-### Create Database
-* Query
+### Create
+* Create Database
 ```
 create database if not exists database-name;
-```
-* Example
-```
 create database if not exists practice;
 ```
 
-### Drop Database
-* Query
+### Drop
+* Drop Database
 ```
 drop database database-name;
 ```
 
-### See all databases
-* Query
+### Use
+* See all databases
 ```
 show databases;
 ```
 
-### Use database
-* Query
+* Use database
 ```
 use database_name
 ```
-
--- create db and user
-
-create user 'practice_admin'@'localhost' identified by 'practice_admin'; 
-grant all on practice.* to 'practice_admin'@'localhost';
