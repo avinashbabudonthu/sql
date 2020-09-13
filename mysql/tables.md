@@ -16,6 +16,37 @@ create table emp
 	primary key(id)
 );
 ```
+* Table with primary key auto increment
+```
+create table emp
+(
+	id bigint auto_increment,
+	name varchar(50),
+	primary key(id)
+);
+```
+* Table with date column
+```
+create table student
+(
+	id bigint auto_increment,
+	name varchar(50),
+	course varchar(50),
+	joining_date datetime,
+	primary key(id)
+);
+```
+* Table with datetime column
+```
+create table student
+(
+	id bigint auto_increment,
+	name varchar(50),
+	course varchar(50),
+	joining_date datetime,
+	primary key(id)
+);
+```
 
 ### Drop
 * Drop table
