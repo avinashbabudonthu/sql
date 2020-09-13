@@ -40,3 +40,19 @@ ALTER TABLE table_name MODIFY column_name column_definition;
 ```
 ALTER TABLE tasks MODIFY end_date end_date DATE NOT NULL;
 ```
+
+## Composite primary key
+* Using `alter`
+* Create table
+```
+create table t_student
+(
+	id int,
+	name varchar(100),
+	age int
+);
+```
+* Add composite primary key
+```
+ALTER table t_student add primary key(id, name);
+```
