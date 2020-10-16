@@ -90,3 +90,7 @@ alter table [fk-table-name] add foreign key([fk-column-name]) references [pk-tab
 
 alter table emp add foreign key(dept_no_fk) references dept(dept_no_pk) on delete set null
 ```
+* Add datetime column with default value
+```
+alter table emp add column create_date datetime default current_timestamp;
+```
