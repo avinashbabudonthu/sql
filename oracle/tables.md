@@ -42,6 +42,10 @@ ALTER TABLE customers
 ```
 ALTER TABLE table_name MODIFY column_name column_type;
 
+ALTER TABLE table_name MODIFY COLUMN column_name datatype; // prior version 10G
+
+ALTER TABLE table_name MODIFY column_name datatype; // oracle 10G and later
+
 ALTER TABLE customers MODIFY customer_name varchar2(100) NOT NULL;
 
 ALTER TABLE customers MODIFY city varchar2(75) DEFAULT 'Hyderabad' NOT NULL;
